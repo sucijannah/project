@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/054e665259.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="navbar nav_dashboard">
+            <h4>Admin BAR-Speed</h4>
+            <form action="" role="search">
+                <input class="form-control" type="search" name="search" placeholder="&#xF002; &nbsp;Search" aria-label="Search">
+            </form>
+        </div>
+        <div class="sidebar_dashboard vh-100">
+            <h4>eCarRental</h4>
+            <div class="d-flex profile">
+                <img src="https://social.webestica.com/assets/images/post/3by2/01.jpg" class="profile_img" alt="" width="40" height="40">
+                <p class="profile_name">Ahmad Dina</p>
+            </div>
+            <form action="" role="search">
+                <input class="form-control" type="search" name="search" placeholder="&#xF002; &nbsp;Search" aria-label="Search">
+            </form>
+            <div class="menus">
+                <ul>
+                    <li><a href="">Transaksi</a></li>
+                    <hr>
+                    <li><a href="">Produk</a></li>
+                    <hr>
+                    <li><a href="">Montri/Mekanik</a></li>
+                    <hr>
+                    <li><a href="">Logout</a></li>            
+                </ul>
+            </div>
+        </div>
+        <div class="content_dashboard">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <h3>Kelola Montir/Mekanik</h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                        <li class="breadcrumb-item"><a href="#">Mekanik</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Form</li>
+                    </ol>
+                </nav>
+            </div>
+            <form action="" method="post" onsubmit="validasi()">
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">Nama Mekanik</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="montir_name" id="nama" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">Jenis Mekanik</label>
+                    <div class="col-sm-10">
+                        <select class="form-select" aria-label="Default select example" name="montir_jenismekanik" id="jenis" required>
+                            <option selected>Open this select menu</option>
+                            <option value="1">Minibus</option>
+                            <option value="2">Mobil</option>
+                            <option value="3">Motor</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">Dekripsi Skill</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="montir_decs" rows="3" id="decs" required></textarea>
+                    </div>
+                </div>
+                <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0">Kemampuan</legend>
+                    <div class="col-sm-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="inlineRadioOptions"  value="serviceringan">
+                            <label class="form-check-label">Service Ringan</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" value="servicebesar">
+                            <label class="form-check-label">Service Besar</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" value="bodyrepair">
+                            <label class="form-check-label">Body Repair</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">Tempat & Tanggal Lahir</label>
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <div class="col"><input class="form-control" type="text" name="tempat lahir" id="tempatlahir" required></div>
+                            <div class="col"><input type="date" class="form-control" name="montir_datetime" id="date" required></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">Telepon Hp</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" name="montir_telp" id="phonenumber" required>
+                    </div>
+                </div>
+                <div class="row  mb-5">
+                    <label class="col-sm-2 col-form-label">Foto Montir</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control" name="montir_telp" id="photo">
+                    </div>
+                </div>
+                <button type="submit" class="btn tombol">Submit</button>
+                <button type="reset" class="btn btn-light">Reset</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
